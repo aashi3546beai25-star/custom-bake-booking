@@ -37,16 +37,30 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
         <div>
           <p className="font-display text-2xl">Sweet Crumb</p>
-          <p className="mt-2 text-sm opacity-80">Baked fresh every morning since 2021.</p>
+          <p className="mt-2 text-sm opacity-80">{TAGLINE}</p>
         </div>
         <div className="text-sm opacity-90">
           <p className="font-semibold">Find us</p>
-          <p className="mt-2">123 Baker Street, Springfield</p>
+          <p className="mt-2">{ADDRESS}</p>
+          <p className="opacity-80">{ADDRESS_HINT}</p>
+          <p className="mt-3 font-semibold">Hours</p>
+          <p className="mt-2">Tue–Sat 8am–6pm · Sun 9am–2pm</p>
+          <p>Closed Mondays</p>
         </div>
         <div className="text-sm opacity-90">
-          <p className="font-semibold">Hours</p>
-          <p className="mt-2">Tue–Sat 7am–6pm · Sun 8am–2pm</p>
-          <p>Closed Mondays</p>
+          <p className="font-semibold">Say hello</p>
+          <p className="mt-2">
+            <a className="hover:underline" href={PHONE_HREF}>{PHONE}</a>
+            {" · "}
+            <a className="hover:underline" target="_blank" rel="noreferrer" href={WHATSAPP_HREF}>WhatsApp</a>
+          </p>
+          <p>
+            <a className="hover:underline" href={EMAIL_HREF}>{EMAIL}</a>
+          </p>
+          <p>
+            <a className="hover:underline" target="_blank" rel="noreferrer" href={INSTAGRAM_HREF}>{INSTAGRAM}</a>
+          </p>
+          <p className="mt-3 opacity-80">Custom cakes: 3 days' notice · Wedding &amp; tiered: 7 days</p>
         </div>
       </div>
     </footer>
