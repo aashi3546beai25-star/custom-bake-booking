@@ -14,13 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cake_orders: {
+        Row: {
+          created_at: string
+          customer_name: string
+          design: string
+          email: string
+          flavor: string
+          id: string
+          phone: string | null
+          pickup_date: string
+          size: string
+        }
+        Insert: {
+          created_at?: string
+          customer_name: string
+          design: string
+          email: string
+          flavor: string
+          id?: string
+          phone?: string | null
+          pickup_date: string
+          size: string
+        }
+        Update: {
+          created_at?: string
+          customer_name?: string
+          design?: string
+          email?: string
+          flavor?: string
+          id?: string
+          phone?: string | null
+          pickup_date?: string
+          size?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_full_dates: { Args: never; Returns: string[] }
     }
     Enums: {
       [_ in never]: never
