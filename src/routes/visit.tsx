@@ -1,13 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-
-export const ADDRESS = "123 Baker Street, Springfield";
-
-const hours = [
-  ["Monday", "Closed"],
-  ["Tuesday – Friday", "7:00am – 6:00pm"],
-  ["Saturday", "7:00am – 6:00pm"],
-  ["Sunday", "8:00am – 2:00pm"],
-];
+import {
+  ADDRESS,
+  ADDRESS_HINT,
+  EMAIL,
+  EMAIL_HREF,
+  HOURS,
+  INSTAGRAM,
+  INSTAGRAM_HREF,
+  PHONE,
+  PHONE_HREF,
+  WHATSAPP_HREF,
+} from "@/contact";
 
 export const Route = createFileRoute("/visit")({
   head: () => ({
@@ -31,17 +34,52 @@ function Visit() {
           <div className="rounded-2xl bg-card p-7 shadow-sm">
             <h2 className="text-2xl">Address</h2>
             <p className="mt-2">{ADDRESS}</p>
-            <a className="mt-3 inline-block font-semibold text-primary" target="_blank" rel="noreferrer"
-              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS)}`}>
+            <p className="text-sm text-muted-foreground">{ADDRESS_HINT}</p>
+            <a
+              className="mt-3 inline-block font-semibold text-primary"
+              target="_blank"
+              rel="noreferrer"
+              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS)}`}
+            >
               Get directions →
             </a>
           </div>
           <div className="rounded-2xl bg-card p-7 shadow-sm">
             <h2 className="text-2xl">Opening hours</h2>
             <ul className="mt-3 divide-y">
-              {hours.map(([d, h]) => (
-                <li key={d} className="flex justify-between py-2"><span>{d}</span><span className="font-semibold">{h}</span></li>
+              {HOURS.map(([d, h]) => (
+                <li key={d} className="flex justify-between py-2">
+                  <span>{d}</span>
+                  <span className="font-semibold">{h}</span>
+                </li>
               ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-card p-7 shadow-sm">
+            <h2 className="text-2xl">Say hello</h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>
+                <span className="font-semibold">Phone / WhatsApp:</span>{" "}
+                <a className="text-primary" href={PHONE_HREF}>
+                  {PHONE}
+                </a>
+                {" · "}
+                <a className="text-primary" target="_blank" rel="noreferrer" href={WHATSAPP_HREF}>
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold">Email:</span>{" "}
+                <a className="text-primary" href={EMAIL_HREF}>
+                  {EMAIL}
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold">Instagram:</span>{" "}
+                <a className="text-primary" target="_blank" rel="noreferrer" href={INSTAGRAM_HREF}>
+                  {INSTAGRAM}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
