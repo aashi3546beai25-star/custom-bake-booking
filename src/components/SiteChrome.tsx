@@ -1,4 +1,16 @@
 import { Link } from "@tanstack/react-router";
+import {
+  ADDRESS,
+  ADDRESS_HINT,
+  EMAIL,
+  EMAIL_HREF,
+  INSTAGRAM,
+  INSTAGRAM_HREF,
+  PHONE,
+  PHONE_HREF,
+  TAGLINE,
+  WHATSAPP_HREF,
+} from "@/contact";
 
 const links = [
   { to: "/menu", label: "Menu" },
