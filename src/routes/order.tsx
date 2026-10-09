@@ -51,11 +51,11 @@ function Order() {
     e.preventDefault();
     setError(null);
     const parsed = schema.safeParse({ ...form, phone: form.phone || undefined });
-    if (!parsed.success) return setError(parsed.error.issues[0].message);
+    if (!parsed.success) return setError(parsed.error.issues[0]?.message ?? "Please check the form");
     if (parsed.data.pickup_date < minDate) return setError("Please choose a date at least 2 days away.");
     if (dateFull) return setError("Sorry, that day is fully booked. Please pick another date.");
     setSending(true);
-    const { error: err } = await supabase.from("cake_orders").insert(parsed.data);
+    const { error: err } = await supabase.from("cake_orders").insert({ ...parsed.data, phone: parsed.data.phone ?? null });
     setSending(false);
     if (err) {
       if (err.message.includes("DATE_FULL")) {
