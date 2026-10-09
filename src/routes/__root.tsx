@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, Footer } from "../components/SiteChrome";
+import { AiPriceChatbot } from "../components/AiPriceChatbot";
 
 function NotFoundComponent() {
   return (
@@ -79,8 +80,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sweet Crumb Bakery" },
-      { name: "description", content: "Custom cakes, cupcakes and fresh bread from Sweet Crumb." },
+      { title: "Sweet Crumb Bakery — Baked fresh, made with love" },
+      { name: "description", content: "Baked fresh, made with love. Custom celebration cakes, cupcakes, sourdough bread, and holiday treats." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -117,6 +118,10 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  // Hide the global chatbot on /order — that page has its own chatbot
+  // with a special "Apply to Order Form" button
+  const location = useRouter().state.location;
+  const isOrderPage = location.pathname === "/order";
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -125,6 +130,8 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      {/* 🤖 Global floating AI Price Chatbot — visible on every page except /order */}
+      {!isOrderPage && <AiPriceChatbot />}
     </QueryClientProvider>
   );
 }

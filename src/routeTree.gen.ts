@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as HolidayOrderRouteImport } from './routes/holiday-order'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as OrderRouteImport } from './routes/order'
 import { Route as VisitRouteImport } from './routes/visit'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HolidayOrderRoute = HolidayOrderRouteImport.update({
+  id: '/holiday-order',
+  path: '/holiday-order',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MenuRoute = MenuRouteImport.update({
@@ -44,6 +50,7 @@ const VisitRoute = VisitRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/holiday-order': typeof HolidayOrderRoute
   '/menu': typeof MenuRoute
   '/order': typeof OrderRoute
   '/visit': typeof VisitRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/holiday-order': typeof HolidayOrderRoute
   '/menu': typeof MenuRoute
   '/order': typeof OrderRoute
   '/visit': typeof VisitRoute
@@ -59,21 +67,30 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/holiday-order': typeof HolidayOrderRoute
   '/menu': typeof MenuRoute
   '/order': typeof OrderRoute
   '/visit': typeof VisitRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/menu' | '/order' | '/visit'
+  fullPaths: '/' | '/about' | '/holiday-order' | '/menu' | '/order' | '/visit'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/menu' | '/order' | '/visit'
-  id: '__root__' | '/' | '/about' | '/menu' | '/order' | '/visit'
+  to: '/' | '/about' | '/holiday-order' | '/menu' | '/order' | '/visit'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/holiday-order'
+    | '/menu'
+    | '/order'
+    | '/visit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  HolidayOrderRoute: typeof HolidayOrderRoute
   MenuRoute: typeof MenuRoute
   OrderRoute: typeof OrderRoute
   VisitRoute: typeof VisitRoute
@@ -93,6 +110,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/holiday-order': {
+      id: '/holiday-order'
+      path: '/holiday-order'
+      fullPath: '/holiday-order'
+      preLoaderRoute: typeof HolidayOrderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/menu': {
@@ -122,6 +146,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  HolidayOrderRoute: HolidayOrderRoute,
   MenuRoute: MenuRoute,
   OrderRoute: OrderRoute,
   VisitRoute: VisitRoute,
