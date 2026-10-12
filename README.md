@@ -1,34 +1,43 @@
-# Custom Bake Booking
+# SweetCrumbbb — Custom Bakery Website
 
-A homepage with nice photos of my cakes and bread. I have lots of pictures on my phone, but some are a bit blurry.
+A modern and visually appealing bakery website designed to showcase cakes and baked treats. This project demonstrates my web development skills and my ability to build and deploy a website for a small business.
 
-A page showing what I sell, with rough prices (cakes depend on size and design, so it varies).
+## 🌐 Live Website
 
-A way for people to order a custom cake: pick a size, flavor, and date, and tell me what design they want. I’d love it if the website stopped two people booking the same day, because I can only make about 3 big cakes a day.
+[Visit SweetCrumbbb](https://sweetcrumbbb.netlify.app/)
 
-My opening hours, my address, and a map so people can find the shop.
+## ✨ Features
 
-An “About me” section. People love hearing the story of how I started baking.
+- Attractive bakery-themed design
+- Product and cake showcase
+- Responsive layout for different screen sizes
+- User-friendly navigation
+- Online presence for a small bakery business
 
-This project was built with [Lovable](https://lovable.dev).
+## 🛠️ Technologies Used
 
-**Live app**: https://custom-bake-booking.lovable.app
+- Lovable — AI-assisted website development
+- React — User interface
+- TypeScript — Type-safe JavaScript
+- CSS / Tailwind CSS — Styling
+- Netlify — Website deployment
+- GitHub — Source code management
 
-## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/6796f9a1-69b9-5df7-b13b-0a99c8c5a275).
+## 📸 Screenshots
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+Add screenshots of your website here to show its design and features.
 
-## Development
+For example:
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+- Homepage
+- Cake/product section
+- Contact or booking section
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## 🎯 Project Goal
+
+The goal of this project was to create a professional online presence for a bakery, with a clean design that helps visitors explore its offerings.
+
+## 👩‍💻 Author
+
+Created as a web development portfolio project.
