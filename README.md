@@ -26,7 +26,7 @@ A modern and visually appealing bakery website designed to showcase cakes and ba
 
 ## 📸 Screenshots
 
-![SweetCrumbbb Homepage](sweetcrumbbb-homepage.png)
+![SweetCrumbbb Homepage](Screenshot 2026-10-12 181239.png)
 
 For example:
 
