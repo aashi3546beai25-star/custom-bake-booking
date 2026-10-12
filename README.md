@@ -26,13 +26,18 @@ A modern and visually appealing bakery website designed to showcase cakes and ba
 
 ## 📸 Screenshots
 
-![SweetCrumbbb Homepage](Screenshot 2026-10-12 181239.png)
+### Homepage
+![SweetCrumbbb Homepage](<Screenshot 2026-10-12 181239.png>)
 
-For example:
+### Screenshot 2
+![SweetCrumbbb Screenshot 2](<Screenshot 2026-10-12 181301.png>)
 
-- Homepage
-- Cake/product section
-- Contact or booking section
+### Screenshot 3
+![SweetCrumbbb Screenshot 3](<Screenshot 2026-10-12 181323.png>)
+
+### Screenshot 4
+![SweetCrumbbb Screenshot 4](<Screenshot 2026-10-12 181346.png>)
+
 
 ## 🎯 Project Goal
 
